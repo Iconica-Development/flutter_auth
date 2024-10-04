@@ -1,6 +1,6 @@
 name: firebase_user_repository
 description: "firebase_user_repository for flutter_user package"
-version: 6.0.0
+version: 6.0.1
 publish_to: none
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
   user_repository_interface:
     git:
       url: https://github.com/Iconica-Development/flutter_user
-      ref: 6.0.0
+      ref: 6.0.1
       path: packages/user_repository_interface
   cloud_firestore: ^5.4.2
   firebase_auth: ^5.3.0

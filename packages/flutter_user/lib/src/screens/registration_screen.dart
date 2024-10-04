@@ -94,7 +94,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
       if (!registrationReponse.registrationSuccessful) {
         var pageToReturn = await widget.onError
-            .call(registrationReponse.registrationError?.message);
+            .call(registrationReponse.registrationError?.title);
 
         if (pageToReturn != null) {
           if (pageToReturn == _pageController.page!.toInt()) {
