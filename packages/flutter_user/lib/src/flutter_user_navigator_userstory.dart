@@ -11,6 +11,7 @@ class FlutterUserNavigatorUserstory extends StatefulWidget {
     this.options,
     this.forgotPasswordTranslations,
     this.registrationOptions,
+    this.forgotPasswordOptions = const ForgotPasswordOptions(),
     super.key,
   });
 
@@ -22,6 +23,7 @@ class FlutterUserNavigatorUserstory extends StatefulWidget {
   final VoidCallback? afterRegistration;
   final ForgotPasswordTranslations? forgotPasswordTranslations;
   final RegistrationOptions? registrationOptions;
+  final ForgotPasswordOptions forgotPasswordOptions;
 
   @override
   State<FlutterUserNavigatorUserstory> createState() =>
@@ -69,11 +71,10 @@ class _FlutterUserNavigatorUserstoryState
         );
 
         if (!loginResponse.loginSuccessful) {
-          if (context.mounted) {
-            Navigator.of(context).pop();
-            // ignore: use_build_context_synchronously
-            await errorScaffoldMessenger(context, loginResponse);
-          }
+          if (!mounted) return;
+          Navigator.of(context).pop();
+          if (!context.mounted) return;
+          await errorScaffoldMessenger(context, loginResponse);
           return;
         }
         await options!.afterLogin?.call();
@@ -130,6 +131,7 @@ class _FlutterUserNavigatorUserstoryState
       title: title,
       description: description,
       loginOptions: options!.loginOptions,
+      forgotPasswordOptions: widget.forgotPasswordOptions,
       onRequestForgotPassword: (email) async {
         if (options!.onRequestForgotPassword != null) {
           await options!.onRequestForgotPassword!(email);
