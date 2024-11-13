@@ -47,11 +47,13 @@ class FirebaseUserRepository implements UserRepositoryInterface {
         email: values["email"],
         password: values["password"],
       );
+      //remove password from values
+      values.remove("password");
 
       await FirebaseFirestore.instance
           .collection(userCollecton)
           .doc(userCredential.user!.uid)
-          .set(values.remove("password"));
+          .set(values);
 
       return RegistrationResponse(
         registrationSuccessful: true,

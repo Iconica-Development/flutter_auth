@@ -1,5 +1,5 @@
-/// Flutter User
-library flutter_user;
+export "package:flutter_profile/flutter_profile.dart";
+export "package:user_repository_interface/user_repository_interface.dart";
 
 export "src/flutter_user_navigator_userstory.dart";
 export "src/models/flutter_user_options.dart";

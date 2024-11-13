@@ -1,7 +1,7 @@
 name: flutter_user
 description: "Flutter Userstory for onboarding, login, and registration."
 publish_to: none
-version: 6.0.0
+version: 6.0.1
 
 environment:
   sdk: ^3.5.1
@@ -11,9 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_input_library:
-    git:
-      url: https://github.com/Iconica-Development/flutter_input_library
-      ref: 3.7.0
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: 3.7.0
   flutter_image_picker:
     git:
       url: https://github.com/Iconica-Development/flutter_image_picker
@@ -21,8 +20,11 @@ dependencies:
   user_repository_interface:
     git:
       url: https://github.com/Iconica-Development/flutter_user
-      ref: 6.0.0
+      ref: 6.0.1
       path: packages/user_repository_interface
+  flutter_profile:
+    hosted: https://forgejo.internal.iconica.nl/api/packages/internal/pub/
+    version: ^1.6.0
 
 dependency_overrides:
   intl: ^0.19.0

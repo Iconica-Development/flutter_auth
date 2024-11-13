@@ -1,3 +1,9 @@
+## 6.1.0
+
+- Fix registration bug with title
+- Add forgotPasswordOptions for customizing the forgot password screen
+- Add automaticLogin option to automatically go beyond the loginscreen if the user is already logged in
+
 ## 6.0.0
 
 - Refactor with the new component structure
