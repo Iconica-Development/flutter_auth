@@ -10,6 +10,7 @@ class FlutterUserOptions {
     this.afterLogin,
     this.onBoardedUser,
     this.useOnboarding = false,
+    this.automaticLogin = true,
     this.onOnboardingComplete,
     this.onRegister,
     this.onForgotPassword,
@@ -31,6 +32,9 @@ class FlutterUserOptions {
   final Future Function()? afterLogin;
   final Future<OnboardedUserMixin?> Function()? onBoardedUser;
   final bool useOnboarding;
+
+  /// Automatically log in the user if they have already logged in before
+  final bool automaticLogin;
   final Future Function(Map<int, Map<String, dynamic>> onboardingResults)?
       onOnboardingComplete;
   final Future Function(String email, String password, BuildContext context)?
